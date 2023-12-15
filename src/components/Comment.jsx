@@ -1,9 +1,10 @@
 export default function Comment({value, onChange }){
   
     return (
-      <div>
-        <label>Additional Feedback:</label>
+      <div className='field-box'>
+        <label>Remarks</label><br/>
         <textarea
+          rows='5'
           value={value}
           onChange={onChange}
         />

@@ -21,7 +21,7 @@ ul {
   background-image: linear-gradient(to left, rgb(202, 204, 202), rgb(170, 27, 27));
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 6;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,7 +70,7 @@ a:hover{
   height: 100%;
   width: 100%;
   background-image: url("./assets/background.jpg");
-  position: absolute;
+  position: fixed;
   z-index: -1;
   opacity: 0.5;
 }
@@ -78,4 +78,95 @@ a:hover{
 .box{
   position: relative;
   z-index: 2;
+  background-color: white;
+  padding: 25px 50px;
+  margin-top: 50px;
+  border-radius: 5px;
 }
+
+.content-header{
+  font-family: Merriweather;
+}
+
+.checkboxes{
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.box-content{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+input[type='text']{
+  border: 1px solid #000;
+  border-radius: 5px;
+  height: 50px;
+  line-height: normal;
+  color: #282828;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+}
+
+textarea{
+  border: 1px solid #000;
+  border-radius: 5px;
+  line-height: normal;
+  color: #282828;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+}
+
+button{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 24px;
+  border: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+  color: #fff;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;  
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #e67584;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+

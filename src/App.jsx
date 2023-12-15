@@ -5,14 +5,14 @@ import './App.css'
 
 function App() {
   const [ratings, setRatings] = useState({
-    foodQuality: 0,
-    ambience: 0,
-    valueForMoney: 0,
-    hygieneAndSafety: 0,
+    foodQuality: 3,
+    ambience: 3,
+    valueForMoney: 3,
+    hygieneAndSafety: 3,
   });
 
   const [comment, setComment] = useState('')
-
+  const [billId, setBillId] = useState('')
 
   function handleRatingChange(key, event){
     const newValue = parseInt(event.target.value);
@@ -20,6 +20,10 @@ function App() {
       ...ratings,
       [key]: newValue,
     });
+  }
+
+  function handlebillIdChange(event){
+    setBillId(event.target.value);
   }
 
   return(
@@ -36,7 +40,17 @@ function App() {
     </ul>
       <div className="content">
         <div className="box">
-          <h2>Your feedback is important to us!</h2>
+          <h2 className='content-header'>Your feedback is important to us!</h2>
+          <div className='box-content'>
+          <div className="field-box">
+            <label htmlFor="billInput">Bill Id</label><br/>
+            <input
+              type="text"
+              id="billInput"
+              value={billId}
+              onChange={handlebillIdChange}
+            />
+          </div>
           <RatingInput
             label="Food Quality"
             value={ratings.foodQuality}
@@ -61,7 +75,11 @@ function App() {
             value={comment}
             onChange={(e) => setComment(e.target.value)}
             />
-        </div>
+            <div className="button-box">
+            <button>Submit</button>
+            </div>
+          </div>
+          </div>
       </div>
       <div className="background">
       </div>
