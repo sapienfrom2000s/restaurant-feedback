@@ -18,7 +18,7 @@ ul {
   list-style-type: none;
   margin: 0;
   width: 100vw;
-  background-image: linear-gradient(to right, rgb(202, 204, 202), rgb(97, 135, 168));
+  background-image: linear-gradient(to left, rgb(202, 204, 202), rgb(170, 27, 27));
   position: sticky;
   top: 0;
   z-index: 2;
@@ -49,7 +49,7 @@ li {
   font-size: 90px;
   font-weight: 700;
   font-family: 'Whisper', sans-serif;
-  color: #2668a2;
+  color: #dbb624;
 }
 
 a {
@@ -61,3 +61,21 @@ a:hover{
   color: #313160;
 }
 
+.content{
+  display: flex;
+  justify-content: center;
+}
+
+.background{
+  height: 100%;
+  width: 100%;
+  background-image: url("./assets/background.jpg");
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.box{
+  position: relative;
+  z-index: 2;
+}
