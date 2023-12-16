@@ -1,8 +1,7 @@
 textarea{
-    border: 1px solid #000;
+    border: 1px solid #f56f6f;
     border-radius: 5px;
     line-height: normal;
-    color: #282828;
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -10,4 +9,9 @@ textarea{
     font-size: 16px;
     padding: 0 6px;
     padding-left: 12px;
+}
+
+textarea:focus{
+    border: 2px solid #f56f6f;
+    outline: none;
 }
