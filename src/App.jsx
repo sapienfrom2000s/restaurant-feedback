@@ -2,6 +2,12 @@ import { useState } from 'react'
 import RatingInput from './components/RatingInput';
 import Comment from './components/Comment'
 import './App.css'
+import './Navbar.css'
+import './TextBox.css'
+import './TextArea.css'
+import './Range.css'
+import './Button.css'
+
 
 function App() {
   const [ratings, setRatings] = useState({
