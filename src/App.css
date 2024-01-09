@@ -34,6 +34,7 @@ body{
   padding: 25px 50px;
   margin-top: 50px;
   border-radius: 5px;
+  border: 2px solid #f56f6f;
 }
 
 .content-header{
@@ -47,3 +48,13 @@ body{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.dark-mode-switch{
+  position: fixed;
+  left: 95vw;
+  top: 8vw;
+}
+
+.ratingnumbers{
+  display: flex;
+  justify-content: space-evenly;
+}

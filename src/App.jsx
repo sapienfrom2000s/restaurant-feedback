@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import RatingInput from './components/RatingInput';
+import RatingSlider from './components/RatingSlider';
 import Comment from './components/Comment'
 import './App.css'
 import './Navbar.css'
@@ -7,14 +7,15 @@ import './TextBox.css'
 import './TextArea.css'
 import './Range.css'
 import './Button.css'
-
+import DarkReader from './components/DarkRead'
+import RatingNumber from './components/RatingNumber';
 
 function App() {
   const [ratings, setRatings] = useState({
-    foodQuality: 3,
-    ambience: 3,
-    valueForMoney: 3,
-    hygieneAndSafety: 3,
+    foodQuality: 50,
+    ambience: 50,
+    valueForMoney: 50,
+    hygieneAndSafety: 50,
   });
 
   const [comment, setComment] = useState('')
@@ -32,6 +33,10 @@ function App() {
     setBillId(event.target.value);
   }
 
+  function handleToggle(event){
+    console.log(event)
+  }
+
   return(
     <div className='page'>
     <ul>
@@ -45,6 +50,11 @@ function App() {
     </div>
     </ul>
       <div className="content">
+      <div className="dark-mode-switch">
+      <DarkReader/>
+      </div>
+      <div className="background">
+      </div>
         <div className="box">
           <h2 className='content-header'>Your feedback is important to us!</h2>
           <div className='box-content'>
@@ -57,26 +67,32 @@ function App() {
               onChange={handlebillIdChange}
             />
           </div>
-          <RatingInput
+          <RatingSlider
             label="Food Quality"
             value={ratings.foodQuality}
             onChange={(e) => handleRatingChange('foodQuality', e)}
           />
-          <RatingInput
+          <RatingSlider
             label="Ambience"
             value={ratings.ambience}
             onChange={(e) => handleRatingChange('ambience', e)}
           />
-          <RatingInput
+          <RatingSlider
             label="Value for Money"
             value={ratings.valueForMoney}
             onChange={(e) => handleRatingChange('valueForMoney', e)}
           />
-          <RatingInput
+          <RatingSlider
             label="Hygiene & Safety"
             value={ratings.hygieneAndSafety}
             onChange={(e) => handleRatingChange('hygieneAndSafety', e)}
           />
+          <div className="ratingnumbers">
+          <RatingNumber value={ratings.foodQuality} onChange={(e) => handleRatingChange('foodQuality', e) }/>
+          <RatingNumber value={ratings.ambience} onChange={(e) => handleRatingChange('ambience', e)} />
+          <RatingNumber value={ratings.valueForMoney} onChange={(e) => handleRatingChange('valueForMoney', e)} />
+          <RatingNumber value={ratings.hygieneAndSafety} onChange={(e) => handleRatingChange('hygieneAndSafety', e)}/>
+          </div>
           <Comment 
             value={comment}
             onChange={(e) => setComment(e.target.value)}
@@ -86,8 +102,6 @@ function App() {
             </div>
           </div>
           </div>
-      </div>
-      <div className="background">
       </div>
     </div>
   );

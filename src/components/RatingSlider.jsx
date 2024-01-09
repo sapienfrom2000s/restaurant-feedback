@@ -1,4 +1,4 @@
-export default function RatingInput({ label, value, onChange }){
+export default function RatingSlider({ label, value, onChange }){
 
   return (
     <div className="field-box">
@@ -7,7 +7,7 @@ export default function RatingInput({ label, value, onChange }){
       <input
         type="range"
         min="1"
-        max="5"
+        max="100"
         value={value}
         onChange={onChange}
       />
